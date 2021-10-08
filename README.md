@@ -27,7 +27,12 @@ Download **NERD Fonts**: [NERD Fonts](https://www.nerdfonts.com/font-downloads)
 
 ## Example
 
+* Bash
 ![workspace-0](myworkspace-screen-0.PNG)
+
+* Vim with NERD Tree
+
+![workspace-0](myworkspace-screen-1.PNG)
 
 # Useful Links
 
