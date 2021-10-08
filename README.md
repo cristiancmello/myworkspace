@@ -28,3 +28,7 @@ Download **NERD Fonts**: [NERD Fonts](https://www.nerdfonts.com/font-downloads)
 ## Example
 
 ![workspace-0](myworkspace-screen-0.PNG)
+
+# Useful Links
+
+[Vim as an IDE - Jez's Blog](https://blog.jez.io/vim-as-an-ide/)
