@@ -15,7 +15,9 @@ sudo apt install -y \
     python3-clang-13 clangd-13 libfuzzer-13-dev lldb-13 lld-13 libc++-13-dev libc++abi-13-dev \
     libomp-13-dev libclc-13-dev libunwind-13-dev
 
-sudo apt install -y exuberant-ctags unzip
+sudo apt install -y exuberant-ctags unzip direnv
+
+echo "eval \"\$(direnv hook bash)\"" >> ~/.bashrc
 
 git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 
@@ -40,8 +42,11 @@ echo -e "POSHTHEME=\"mt.omp.json\"\neval \"\$(oh-my-posh --init --shell bash --c
 ###
 curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz && sha256sum go1.16.7.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
-echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
 
+echo -e "
+export PATH=\$PATH:/usr/local/go/bin
+export GOPATH=\$(go env GOPATH)
+" >> ~/.profile
 
 # Clean Up
 sudo apt clean ; sudo apt autoclean ; sudo apt autoremove
