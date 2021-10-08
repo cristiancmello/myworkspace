@@ -3,7 +3,7 @@ My Workspace with WSL2 and Ubuntu 20.04 LTS
 
 ## Download
 
-Please, [download v0.1-prelease](https://github.com/cristiancmello/myworkspace/archive/refs/tags/v0.1.zip) 
+Please, [download v0.2-prelease](https://github.com/cristiancmello/myworkspace/archive/refs/tags/v0.2.zip) 
 
 ## Requirements
 
