@@ -1,8 +1,13 @@
 # myworkspace
 My Workspace with WSL2 and Ubuntu 20.04 LTS
 
+## Download
+
+Please, [download v0.1-prelease](https://github.com/cristiancmello/myworkspace/archive/refs/tags/v0.1.zip) 
+
 ## Requirements
 
+- Windows 10 21H1
 - Windows Terminal
 - [JetBrainsMono NF Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip) installed
 - WSL2
