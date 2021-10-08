@@ -35,11 +35,13 @@ rm ~/.poshthemes/themes.zip
 echo -e "POSHTHEME=\"mt.omp.json\"\neval \"\$(oh-my-posh --init --shell bash --config ~/.poshthemes/\${POSHTHEME})\"\n" >> ~/.bashrc
 
 # Installing Specific Development Tools
-sudo apt install -y \
-    golang
+###
+# GOLANG
+###
+curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz && sha256sum go1.16.7.linux-amd64.tar.gz
+sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
+echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
+
 
 # Clean Up
 sudo apt clean ; sudo apt autoclean ; sudo apt autoremove
-
-# Generate Log
-go version
