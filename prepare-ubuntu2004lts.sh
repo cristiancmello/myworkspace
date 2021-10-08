@@ -20,7 +20,7 @@ sudo apt install -y exuberant-ctags unzip
 git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 
 cp .vimrc ~/.vimrc
-vim +'PlugInstall --sync' +qa
+vim '+PluginInstall' +qall
 
 # Installing OhMyPosh
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
