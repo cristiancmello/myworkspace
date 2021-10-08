@@ -28,6 +28,9 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
+" ----- Other text editing features -----------------------------------
+Plugin 'Raimondi/delimitMate'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -45,7 +48,6 @@ syntax on
 set mouse=a
 
 " ----- Plugin-Specific Settings --------------------------------------
-
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
 set background=dark
@@ -55,7 +57,6 @@ let g:solarized_termcolors=256
 
 " Set the colorscheme
 " colorscheme solarized
-
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
@@ -79,7 +80,6 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup = 0
-
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
@@ -112,6 +112,15 @@ hi clear SignColumn
 " In vim-airline, only display "hunks" if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
 
+" ----- Raimondi/delimitMate settings -----
+let delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
 
 
 
