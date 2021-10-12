@@ -42,12 +42,27 @@ echo -e "POSHTHEME=\"mt.omp.json\"\neval \"\$(oh-my-posh --init --shell bash --c
 ###
 curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz && sha256sum go1.16.7.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
+rm -f go1.16.7.linux-amd64.tar.gz
 
 echo -e "
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=\$PATH:/usr/local/go/bin
+export GOPATH=\$(go env GOPATH)
+export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
 " >> ~/.profile
+
+###
+# NVM
+###
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+###
+# NodeJS (latest LTS)
+###
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm install --lts
 
 # Clean Up
 sudo apt clean ; sudo apt autoclean ; sudo apt autoremove
