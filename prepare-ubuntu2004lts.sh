@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt update ; sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # Installing Development Tools
 sudo apt install build-essential -y
@@ -63,6 +63,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm install --lts
+
+###
+# JRE and JDK 11
+###
+sudo apt install default-jre default-jdk -y
+sudo bash -c 'echo -e "JAVA_HOME=\"/usr/lib/jvm/java-11-openjdk-amd64\"\nPATH=\$PATH:\$HOME/bin:\$JAVA_HOME/bin\nexport JAVA_HOME\nexport PATH\n" >> /etc/profile'
+java -version; javac -version
 
 # Clean Up
 sudo apt clean ; sudo apt autoclean ; sudo apt autoremove
